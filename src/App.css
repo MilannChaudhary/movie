@@ -1,42 +1,79 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.wrapper {
+  background-color: rgb(71, 71, 71);
+  min-height: 100vh;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+nav {
+  background: rgba(0, 0, 0, 0.47);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.hero {
+  position: relative;
+  min-height: 80vh;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.323);
+  z-index: 0;
+}
+
+.hero-content {
+  max-width: 450px;
+  z-index: 2;
+}
+
+/* form */
+.form-center {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+}
+.form-top {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  width: 450px;
+  transform: translate(-50%, -50%);
+  transition: all 0.5s;
+}
+
+/* card */
+
+.movie-card-item {
+  background-color: rgba(255, 255, 255, 0.468);
+  backdrop-filter: blur(5px);
+  max-width: 450px;
+}
+
+.movie-card-item img {
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .movie-card-item img {
+    width: auto;
+    max-height: 220px;
+    object-fit: cover;
   }
-  to {
-    transform: rotate(360deg);
+} /* End card */
+
+.showMovie {
+  transform: scale(1);
+  animation: zoom 0.5s;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0);
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
+  100% {
+    transform: scale(1);
   }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
